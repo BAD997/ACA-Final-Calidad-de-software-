@@ -51,7 +51,7 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
-                <nav className="flex flex-col gap-4 mt-8">
+                <nav className="flex flex-col gap-8 mt-8 p-6 text-center">
                   {navItems.map((item) => (
                     <a
                       key={item.name}
