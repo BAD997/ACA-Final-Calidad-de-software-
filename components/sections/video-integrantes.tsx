@@ -39,71 +39,8 @@ export function VideoIntegrantes() {
 
   return (
     <section id="video" className="py-16 scroll-mt-16">
-      <div className="flex items-center gap-3 mb-8">
-        <Video className="h-8 w-8 text-primary" />
-        <h2 className="text-3xl font-bold">Video de los Integrantes</h2>
-      </div>
 
-      <Card className="mb-8">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-primary" />
-            <CardTitle>Presentación del Equipo</CardTitle>
-          </div>
-          <CardDescription>
-            Conoce al equipo detrás de este proyecto educativo sobre calidad de software
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {!embedUrl ? (
-            <>
-              <Alert>
-                <Video className="h-4 w-4" />
-                <AlertDescription>
-                  Ingresa la URL de tu video de YouTube, Vimeo o cualquier plataforma de video para mostrarlo aquí.
-                </AlertDescription>
-              </Alert>
 
-              <form onSubmit={handleVideoSubmit} className="flex gap-2">
-                <Input
-                  type="url"
-                  placeholder="https://www.youtube.com/watch?v=..."
-                  value={videoUrl}
-                  onChange={(e) => setVideoUrl(e.target.value)}
-                  className="flex-1"
-                />
-                <Button type="submit">Cargar Video</Button>
-              </form>
-
-              <div className="bg-muted rounded-lg p-12 text-center">
-                <Video className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
-                <p className="text-muted-foreground">El video de presentación aparecerá aquí</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="aspect-video rounded-lg overflow-hidden bg-black">
-                <iframe
-                  src={embedUrl}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setEmbedUrl("")
-                  setVideoUrl("")
-                }}
-              >
-                Cambiar Video
-              </Button>
-            </>
-          )}
-        </CardContent>
-      </Card>
 
       <Card>
         <CardHeader>
